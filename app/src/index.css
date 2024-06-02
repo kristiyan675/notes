@@ -1,0 +1,119 @@
+/* Generic global styles */
+body,
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+.ant-layout-content {
+  padding: 0;
+  margin: 0 auto;
+  max-width: 1200px;
+  width: 100%;
+}
+
+/* Reduces the width of the form for new note*/
+.ant-layout-content:has(.addNote) {
+  max-width: 550px;
+}
+
+main li a:hover {
+  font-size: medium;
+}
+
+.ant-list-item-meta-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* Ensures long texts do not break the view in the view */
+  max-width: 50% !important;
+  text-align: left;
+}
+
+/* Mobile first design */
+.ant-list-item-meta-content {
+  display: flex;
+  justify-content: center;
+}
+
+.noteBody {
+  display: none !important;
+}
+
+.navText {
+  display: none;
+}
+
+.ant-menu {
+  width: 100%;
+  justify-content: space-between;
+}
+
+.ant-list-item {
+  display: block !important;
+  text-align: center;
+}
+
+.ant-list-item-action {
+  margin: 0 !important;
+}
+
+.ant-pagination-item {
+  display: none !important;
+}
+
+.ant-list-item-action li {
+  padding: 0 !important;
+}
+
+/* Mobile first design */
+/* Optimize the application's responsiveness */
+@media screen and (min-width: 381px) {
+  .navText {
+    display: block;
+  }
+
+  .ant-list-item-meta-content {
+    justify-content: start;
+  }
+
+  .ant-menu {
+    width: unset;
+  }
+
+  .ant-list-item {
+    display: flex !important;
+  }
+
+  .ant-pagination-item {
+    display: inline-block !important;
+  }
+
+  .ant-list-item-action li {
+    padding: 0 8px !important;
+  }
+}
+
+@media screen and (min-width: 601px) {
+  .noteBody {
+    display: flex !important;
+  }
+
+  .ant-list-item-meta-title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 350px;
+  }
+}
+
+@media screen and (min-width: 1001px) {
+  .ant-list-item-meta-title {
+    /* Ensures long texts do not break the view in the view */
+    max-width: 350px !important;
+  }
+}
