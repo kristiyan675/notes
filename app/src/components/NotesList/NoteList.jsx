@@ -1,16 +1,22 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { List, Pagination, Button } from "antd";
 import { DeleteOutlined, FileSearchOutlined } from "@ant-design/icons";
-import useNotes from "./useNoteList";
+import { useNotes } from "../../context/NoteContext";
 
-const NoteList = ({ notes, saveNotes }) => {
-  const {
-    currentNotes,
-    currentPage,
-    notesPerPage,
-    handlePageClick,
-    handleDelete,
-  } = useNotes(notes, saveNotes);
+const NoteList = () => {
+  const { notes, deleteNote } = useNotes();
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const notesPerPage = 5;
+
+  const offset = (currentPage - 1) * notesPerPage;
+  const currentNotes = notes.slice(offset, offset + notesPerPage);
+
+  const handlePageClick = (page) => {
+    setCurrentPage(page);
+  };
+  const totalPages = Math.ceil(notes.length / notesPerPage);
 
   return (
     <div>
@@ -28,7 +34,17 @@ const NoteList = ({ notes, saveNotes }) => {
                 </Button>
               </Link>,
 
-              <Button danger onClick={() => handleDelete(note.id)}>
+              <Button
+                danger
+                onClick={() => {
+                  deleteNote(note.id);
+
+                  // TODO fix bug if only 1 is left
+                  if (currentPage > totalPages) {
+                    setCurrentPage(totalPages);
+                  }
+                }}
+              >
                 {/* @dev add delete button simpler UX */}
                 <DeleteOutlined />
               </Button>,
@@ -42,7 +58,7 @@ const NoteList = ({ notes, saveNotes }) => {
               style={{
                 whiteSpace: "nowrap",
               }}
-              title={note.body}
+              title={note.content}
               className="noteBody"
             />
           </List.Item>

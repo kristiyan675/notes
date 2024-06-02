@@ -7,3 +7,7 @@ CREATE TABLE notes (
 );
 
 INSERT INTO notes (title, content) VALUES ('First Note', 'This is the content of the first note.');
+INSERT INTO notes (title, content) VALUES ('Second Note', 'This is the content of the Second note.');
+INSERT INTO notes (title, content) VALUES ('Third Note', 'This is the content of the Third note.');
+INSERT INTO notes (title, content) VALUES ('Fourth Note', 'This is the content of the Fourth note.');
+

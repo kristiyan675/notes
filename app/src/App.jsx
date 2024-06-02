@@ -4,13 +4,10 @@ import AppHeader from "./components/Header/Header";
 import NoteList from "./components/NotesList/NoteList";
 import NoteForm from "./components/AddNote/AddNote";
 import Note from "./components/Note/Note";
-import useNotes from "./hooks/useNotes";
 
 const { Header, Content, Footer } = Layout;
 
 const App = () => {
-  const [notes, saveNotes] = useNotes();
-  // console.log(notes);
   return (
     // Optimize the application's responsiveness and interactivity.
     <Layout style={{ minHeight: "100vh" }}>
@@ -34,18 +31,9 @@ const App = () => {
           }}
         >
           <Routes>
-            <Route
-              path="/"
-              element={<NoteList notes={notes} saveNotes={saveNotes} />}
-            />
-            <Route
-              path="/note/new"
-              element={<NoteForm notes={notes} saveNotes={saveNotes} />}
-            />
-            <Route
-              path="/note/:id"
-              element={<Note notes={notes} saveNotes={saveNotes} />}
-            />
+            <Route path="/" element={<NoteList />} />
+            <Route path="/note/new" element={<NoteForm />} />
+            <Route path="/note/:id" element={<Note />} />
           </Routes>
         </div>
       </Content>

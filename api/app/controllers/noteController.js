@@ -2,7 +2,6 @@ const pool = require("../../db");
 
 // Get all notes
 exports.getAllNotes = (req, res) => {
-  console.log("here");
   pool.query("SELECT * FROM notes", (error, results) => {
     if (error) {
       throw error;
@@ -17,6 +16,7 @@ exports.getNoteById = (req, res) => {
     if (error) {
       throw error;
     }
+    // console.log(req.params.id);
     res.status(200).json(results.rows[0]);
   });
 };
@@ -51,6 +51,7 @@ exports.updateNote = (req, res) => {
 };
 
 exports.deleteNote = (req, res) => {
+  console.log("delete");
   const id = parseInt(req.params.id);
   pool.query(
     "DELETE FROM notes WHERE id = $1 RETURNING *",

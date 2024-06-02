@@ -1,10 +1,12 @@
 import React, { useState } from "react";
-import { Form, Input, Button } from "antd";
+import { Form, Button } from "antd";
 import { useNavigate } from "react-router-dom";
 import TitleInput from "../utils/InputTitle";
 import InputBody from "../utils/InputBody";
+import { useNotes } from "../../context/NoteContext";
 
-const NoteForm = ({ notes, saveNotes }) => {
+const NoteForm = () => {
+  const { createNote } = useNotes();
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
   const navigate = useNavigate();
@@ -13,13 +15,12 @@ const NoteForm = ({ notes, saveNotes }) => {
     const newNote = {
       // For simplicity we use Math.random().
       // Future Improvement: Replace with UUID to replace ID collision.
-      id: Math.random().toFixed(3).toString(),
+      // id: Math.random().toFixed(3).toString(),
       title,
-      body,
+      content: body,
       date: new Date().toLocaleDateString(),
     };
-    const updatedNotes = [...notes, newNote];
-    saveNotes(updatedNotes);
+    createNote(newNote);
     navigate("/");
   };
 

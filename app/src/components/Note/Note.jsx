@@ -2,18 +2,21 @@ import { Button, Form } from "antd";
 import useNote from "./useNote";
 import TitleInput from "../utils/InputTitle";
 import InputBody from "../utils/InputBody";
+import { useNotes } from "../../context/NoteContext";
 
-const Note = ({ notes, saveNotes }) => {
+const Note = () => {
+  const { updateNote, deleteNote, getNoteById } = useNotes();
+
   const {
-    note,
+    currentNote,
     isEditing,
+    editedTitle,
+    editedBody,
     setEditedTitle,
     setEditedBody,
     handleEditToggle,
-    handleDelete,
-    handleSave,
     navHome,
-  } = useNote(notes, saveNotes);
+  } = useNote(getNoteById);
 
   return (
     <div>
@@ -24,10 +27,16 @@ const Note = ({ notes, saveNotes }) => {
         <Form
           layout="vertical"
           initialValues={{
-            title: note?.title,
-            body: note?.body,
+            title: currentNote?.title,
+            body: currentNote?.content,
           }}
-          onFinish={handleSave}
+          onFinish={() => {
+            updateNote(
+              { title: editedTitle, content: editedBody },
+              currentNote.id
+            ),
+              navHome();
+          }}
         >
           <TitleInput
             onChange={(e) => {
@@ -52,13 +61,13 @@ const Note = ({ notes, saveNotes }) => {
         </Form>
       ) : (
         <div style={{ overflowWrap: "anywhere" }}>
-          <h2>{note?.title}</h2>
-          <p>{note?.body}</p>
+          <h2>{currentNote?.title}</h2>
+          <p>{currentNote?.content}</p>
           <div style={{ display: "flex", justifyContent: "space-between" }}>
             <Button type="primary" onClick={handleEditToggle}>
               Edit
             </Button>
-            <Button danger onClick={handleDelete}>
+            <Button danger onClick={deleteNote}>
               Delete
             </Button>
           </div>
