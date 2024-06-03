@@ -78,7 +78,7 @@ From terminal:
 2. Install dependencies
 
    ```sh
-   npm run install
+   npm install
 
    ```
 
