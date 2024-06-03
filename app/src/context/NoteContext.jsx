@@ -26,7 +26,6 @@ export const NotesProvider = ({ children }) => {
           throw new Error(`HTTP error! Status: ${response.status}`);
         }
         const data = await response.json();
-        console.log("here");
         setNotes(data);
       } catch (err) {
         console.log(err);
