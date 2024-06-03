@@ -11,7 +11,7 @@ const NoteList = () => {
   const notesPerPage = 5;
 
   const offset = (currentPage - 1) * notesPerPage;
-  const currentNotes = notes.slice(offset, offset + notesPerPage);
+  const currentNotes = notes?.slice(offset, offset + notesPerPage);
 
   const handlePageClick = (page) => {
     setCurrentPage(page);

@@ -8,10 +8,11 @@ export const useNotes = () => {
   return useContext(NotesContext);
 };
 
-const openNotification = (type, message, description) => {
+const openNotification = (type, message, description, placement) => {
   notification[type]({
     message,
     description,
+    placement,
   });
 };
 
@@ -73,7 +74,8 @@ export const NotesProvider = ({ children }) => {
       openNotification(
         "success",
         "Note Creation",
-        "Note has been successfully created."
+        "Note has been successfully created.",
+        "bottomRight"
       );
       setNotes((prevNotes) => [...prevNotes, data]);
     } catch (err) {
@@ -99,7 +101,8 @@ export const NotesProvider = ({ children }) => {
       openNotification(
         "success",
         "Note Update",
-        "Note has been successfully updated."
+        "Note has been successfully updated.",
+        "bottomRight"
       );
       setNotes((prevNotes) =>
         prevNotes.map((note) => (note.id === id ? data : note))
@@ -122,7 +125,8 @@ export const NotesProvider = ({ children }) => {
       openNotification(
         "success",
         "Note Update",
-        "Note has been successfully deleted."
+        "Note has been successfully deleted.",
+        "bottomRight"
       );
       setNotes((prevNotes) => prevNotes.filter((note) => note.id !== id));
     } catch (err) {
