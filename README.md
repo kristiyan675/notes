@@ -68,7 +68,7 @@ Once the server is running and the database has been created successfully.
 
 From terminal:
 
-1. Navigate to api folder
+1. Navigate to app folder
 
    ```sh
    cd ./app
