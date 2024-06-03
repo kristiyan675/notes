@@ -95,8 +95,8 @@ From terminal:
 4. Open app in the browser
 
 ### Improvements
-    Script for nitializing a new database,
-    creating the table and generating initial examples data of notes for the user to see
+Script for initializing a new database,
+creating the table and generating initial examples data of notes for the user to see.
 
 
 ### Future improvements
