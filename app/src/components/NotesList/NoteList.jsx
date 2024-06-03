@@ -18,6 +18,10 @@ const NoteList = () => {
   };
   const totalPages = Math.ceil(notes.length / notesPerPage);
 
+  if (totalPages > 0 && currentPage > totalPages) {
+    setCurrentPage(totalPages);
+  }
+
   return (
     <div>
       <h2>My Notes</h2>
@@ -34,17 +38,7 @@ const NoteList = () => {
                 </Button>
               </Link>,
 
-              <Button
-                danger
-                onClick={() => {
-                  deleteNote(note.id);
-
-                  // TODO fix bug if only 1 is left
-                  if (currentPage > totalPages) {
-                    setCurrentPage(totalPages);
-                  }
-                }}
-              >
+              <Button danger onClick={() => deleteNote(note.id)}>
                 {/* @dev add delete button simpler UX */}
                 <DeleteOutlined />
               </Button>,

@@ -111,13 +111,6 @@ main li a:hover {
   .ant-list-item-meta-title {
     overflow: hidden;
     text-overflow: ellipsis;
-    max-width: 350px;
-  }
-}
-
-@media screen and (min-width: 1001px) {
-  .ant-list-item-meta-title {
-    /* Ensures long texts do not break the view in the view */
     max-width: 350px !important;
   }
 }

@@ -1,6 +1,7 @@
 const { Pool } = require("pg");
 
 // db config
+// !! Update with personal credentials !!
 const pool = new Pool({
   user: "postgres",
   host: "localhost",
