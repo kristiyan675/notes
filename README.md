@@ -37,7 +37,7 @@ From terminal:
 
 1. Clone the repository:
    ```sh
-   git clone https://github.com/kristiyan675/notes.git
+   git clone https://github.com/kristiyan675/notesFE.git
    ```
 2. Update the init.sh and db.js files with your personal local database credentials.
 
