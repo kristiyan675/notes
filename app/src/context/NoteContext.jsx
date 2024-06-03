@@ -124,7 +124,7 @@ export const NotesProvider = ({ children }) => {
       }
       openNotification(
         "success",
-        "Note Update",
+        "Note Deletion",
         "Note has been successfully deleted.",
         "bottomRight"
       );
