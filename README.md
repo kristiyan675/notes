@@ -29,7 +29,7 @@ This project is a full-stack application for taking notes, built with a React fr
 
 Make sure you have NodeJs installed.
 
-Install and setup local PostgresSQL server.
+## Install and setup local PostgresSQL server.
 
 ### Backend Setup
 
@@ -55,7 +55,7 @@ From terminal:
 
    ```
 
-### Update the init.sh and db.js files with your personal local database credentials.
+### Install and setup local PostgresSQL server. Update the init.sh and db.js files with your personal local database credentials.
 
 4.  Make sure you have nothing running port 3000.
     Run init.sh file (If you're on windows you can use git bash for running the script).
