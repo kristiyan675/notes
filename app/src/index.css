@@ -109,8 +109,6 @@ main li a:hover {
   }
 
   .ant-list-item-meta-title {
-    overflow: hidden;
-    text-overflow: ellipsis;
     max-width: 350px !important;
   }
 }
