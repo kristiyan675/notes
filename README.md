@@ -36,31 +36,34 @@ Install and setup local PostgresSQL server.
 From terminal:
 
 1. Clone the repository:
+
    ```sh
    git clone https://github.com/kristiyan675/notes.git
    ```
-2. Update the init.sh and db.js files with your personal local database credentials.
 
-3. Navigate to api folder
+2. Navigate to api folder
 
    ```sh
    cd ./notes/api
 
    ```
 
-4. Install dependencies
+3. Install dependencies
 
    ```sh
    npm install
 
    ```
 
-5. Make sure you have nothing running port 3000.
-   Run init.sh file (If you're on windows you can use git bash for running the script).
-   This will connect and create a new database and table.
-   ```sh
-   ./init.sh
-   ```
+### Update the init.sh and db.js files with your personal local database credentials.
+
+4.  Make sure you have nothing running port 3000.
+    Run init.sh file (If you're on windows you can use git bash for running the script).
+    This will connect and create a new database and table.
+
+    ```sh
+    ./init.sh
+    ```
 
 ### Frontend Setup
 
