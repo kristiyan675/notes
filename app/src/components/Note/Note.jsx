@@ -67,7 +67,13 @@ const Note = () => {
             <Button type="primary" onClick={handleEditToggle}>
               Edit
             </Button>
-            <Button danger onClick={deleteNote}>
+            <Button
+              danger
+              onClick={() => {
+                deleteNote(currentNote?.id);
+                navHome();
+              }}
+            >
               Delete
             </Button>
           </div>
