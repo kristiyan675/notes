@@ -19,7 +19,7 @@ const Note = () => {
   } = useNote(getNoteById);
 
   return (
-    <div>
+    <div className="addNote">
       <Button onClick={navHome} style={{ marginBottom: "20px" }}>
         Back
       </Button>
