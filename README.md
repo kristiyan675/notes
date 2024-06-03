@@ -93,3 +93,13 @@ From terminal:
    ```
 
 4. Open app in the browser
+
+### Improvements
+    Script for nitializing a new database,
+    creating the table and generating initial examples data of notes for the user to see
+
+
+### Future improvements
+- Add more validation on inputs
+- Add a loading spinner component
+- Provide feedback if a request is also not a success
