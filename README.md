@@ -44,18 +44,18 @@ From terminal:
 3. Navigate to api folder
 
    ```sh
-   cd ./api
+   cd ./notes/api
 
    ```
 
 4. Install dependencies
 
    ```sh
-   npm run install
+   npm install
 
    ```
 
-5. Make sure you have nothin running port 3000.
+5. Make sure you have nothing running port 3000.
    Run init.sh file (If you're on windows you can use git bash for running the script).
    This will connect and create a new database and table.
    ```sh
@@ -78,7 +78,7 @@ From terminal:
 2. Install dependencies
 
    ```sh
-   npm run install
+   npm install
 
    ```
 
