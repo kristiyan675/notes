@@ -44,7 +44,7 @@ From terminal:
 3. Navigate to api folder
 
    ```sh
-   cd ./api
+   cd ./notes/api
 
    ```
 
